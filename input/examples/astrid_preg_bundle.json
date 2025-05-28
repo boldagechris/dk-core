@@ -420,8 +420,8 @@
             },
             {
               "system": "http://loinc.org",
-              "code": "33747-0",
-              "display": "Glucose [Molar concentration] in Serum or Plasma --1 hour post dose glucose"
+              "code": "2339-0",
+              "display": "Glucose [Mass/volume] in Blood"
             }
           ]
         },
