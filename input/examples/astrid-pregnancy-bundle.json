@@ -1,0 +1,610 @@
+{
+  "resourceType": "Bundle",
+  "id": "astrid-lab-results-bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:11111111-1111-1111-1111-111111111111",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "astrid-larsen-nielsen",
+        "meta": {
+          "profile": [
+            "http://hl7.dk/fhir/core/StructureDefinition/dk-core-patient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Astrid Larsen Nielsen (CPR: 1503901234)</div>"
+        },
+        "identifier": [
+          {
+            "use": "official",
+            "system": "urn:oid:1.2.208.176.1.2",
+            "value": "1503901234"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Nielsen",
+            "given": ["Astrid", "Larsen"]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1990-03-15"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:22222222-2222-2222-2222-222222222222",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "lab-org",
+        "meta": {
+          "profile": ["http://hl7.dk/fhir/core/StructureDefinition/dk-core-organization"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Example Lab Organization</div>"
+        },
+        "name": "Example Lab Organization",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.208.176.1.1",
+            "value": "12345678901"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:33333333-3333-3333-3333-333333333333",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hcg-pregnancy-confirmation",
+        "meta": {
+          "profile": [
+            "http://hl7.dk/fhir/core/StructureDefinition/dk-core-observation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Beta hCG: 1250 IU/L (Positive - Confirms pregnancy)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.208.176.2.1",
+              "code": "NPU03804",
+              "display": "Pt—Body; mass = ? kg"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "19080-1",
+              "display": "Choriogonadotropin [Units/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Beta hCG"
+        },
+        "subject": {
+          "reference": "urn:uuid:11111111-1111-1111-1111-111111111111"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:22222222-2222-2222-2222-222222222222"
+          }
+        ],
+        "effectiveDateTime": "2025-01-15T09:30:00Z",
+        "valueQuantity": {
+          "value": 1250,
+          "unit": "IU/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "[IU]/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "POS",
+                "display": "Positive"
+              }
+            ],
+            "text": "Confirms pregnancy"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:44444444-4444-4444-4444-444444444444",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "hemoglobin-first-trimester",
+        "meta": {
+          "profile": [
+            "http://hl7.dk/fhir/core/StructureDefinition/dk-core-observation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Hemoglobin: 11.8 g/dL (Normal for 1st trimester)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.208.176.2.1",
+              "code": "NPU02593",
+              "display": "B—Hemoglobin(Fe); c = ? mmol/L"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:11111111-1111-1111-1111-111111111111"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:22222222-2222-2222-2222-222222222222"
+          }
+        ],
+        "effectiveDateTime": "2025-01-20T10:15:00Z",
+        "valueQuantity": {
+          "value": 11.8,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ],
+            "text": "Normal for 1st trimester"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:55555555-5555-5555-5555-555555555555",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "folate-neural-tube-prevention",
+        "meta": {
+          "profile": [
+            "http://hl7.dk/fhir/core/StructureDefinition/dk-core-observation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Folate: 680 nmol/L (High - Excellent for preventing neural tube defects)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.208.176.2.1",
+              "code": "NPU01628",
+              "display": "P—Folate; subst.c. = ? nmol/L"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "15087-0",
+              "display": "Parathyrin related protein [Moles/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:11111111-1111-1111-1111-111111111111"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:22222222-2222-2222-2222-222222222222"
+          }
+        ],
+        "effectiveDateTime": "2025-02-05T11:00:00Z",
+        "valueQuantity": {
+          "value": 680,
+          "unit": "nmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "nmol/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ],
+            "text": "Excellent - preventing neural tube defects"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:66666666-6666-6666-6666-666666666666",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "tsh-thyroid-function",
+        "meta": {
+          "profile": [
+            "http://hl7.dk/fhir/core/StructureDefinition/dk-core-observation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">TSH: 1.8 mU/L (Normal pregnancy range)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.208.176.2.1",
+              "code": "NPU03577",
+              "display": "P—Thyrotropin; arb.subst.c.(IRP 80/558) = ? × 10^(-3) IU/L"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "3016-3",
+              "display": "Thyrotropin [Units/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:11111111-1111-1111-1111-111111111111"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:22222222-2222-2222-2222-222222222222"
+          }
+        ],
+        "effectiveDateTime": "2025-02-10T09:45:00Z",
+        "valueQuantity": {
+          "value": 1.8,
+          "unit": "mU/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "m[IU]/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ],
+            "text": "Normal pregnancy range"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:77777777-7777-7777-7777-777777777777",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "blood-type-pregnancy-monitoring",
+        "meta": {
+          "profile": [
+            "http://hl7.dk/fhir/core/StructureDefinition/dk-core-observation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Blood Type: A+ (Important for pregnancy monitoring)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.208.176.2.1",
+              "code": "NPU01685",
+              "display": "B—Blood group(ABO); type = ?"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "883-9",
+              "display": "ABO group [Type] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:11111111-1111-1111-1111-111111111111"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:22222222-2222-2222-2222-222222222222"
+          }
+        ],
+        "effectiveDateTime": "2025-02-15T08:30:00Z",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "112144000",
+              "display": "Blood group A"
+            }
+          ],
+          "text": "A+"
+        },
+        "note": [
+          {
+            "text": "Important for pregnancy monitoring"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:88888888-8888-8888-8888-888888888888",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "iron-studies-anemia-prevention",
+        "meta": {
+          "profile": [
+            "http://hl7.dk/fhir/core/StructureDefinition/dk-core-observation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Iron: 18 µmol/L (Normal - preventing anemia)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.208.176.2.1",
+              "code": "NPU01322",
+              "display": "P—Iron; subst.c. = ? µmol/L"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "2498-4",
+              "display": "Iron [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:11111111-1111-1111-1111-111111111111"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:22222222-2222-2222-2222-222222222222"
+          }
+        ],
+        "effectiveDateTime": "2025-03-20T10:00:00Z",
+        "valueQuantity": {
+          "value": 18,
+          "unit": "µmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "umol/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ],
+            "text": "Normal - preventing anemia"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:99999999-9999-9999-9999-999999999999",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "glucose-tolerance-test",
+        "meta": {
+          "profile": [
+            "http://hl7.dk/fhir/core/StructureDefinition/dk-core-observation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Glucose: 6.8 mmol/L (Normal - no gestational diabetes)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.208.176.2.1",
+              "code": "NPU02187",
+              "display": "P—Glucose; subst.c. = ? mmol/L"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "2339-0",
+              "display": "Glucose [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:11111111-1111-1111-1111-111111111111"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:22222222-2222-2222-2222-222222222222"
+          }
+        ],
+        "effectiveDateTime": "2025-04-10T11:30:00Z",
+        "valueQuantity": {
+          "value": 6.8,
+          "unit": "mmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mmol/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ],
+            "text": "Normal - no gestational diabetes"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "urine-protein-preeclampsia-screening",
+        "meta": {
+          "profile": [
+            "http://hl7.dk/fhir/core/StructureDefinition/dk-core-observation"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Urine Protein: 0.08 g/L (Normal - no preeclampsia signs)</div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.208.176.2.1",
+              "code": "NPU04206",
+              "display": "U—Protein; arb.c.(proc.) = ?"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "2890-2",
+              "display": "Protein/Creatinine [Mass Ratio] in Urine"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:11111111-1111-1111-1111-111111111111"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:22222222-2222-2222-2222-222222222222"
+          }
+        ],
+        "effectiveDateTime": "2025-04-25T09:15:00Z",
+        "valueQuantity": {
+          "value": 0.08,
+          "unit": "g/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/L"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ],
+            "text": "Normal - no preeclampsia signs"
+          }
+        ]
+      }
+    }
+  ]
+} 
